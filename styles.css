@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #fffafc;
+    background-color: #fcfafa;
     color: #333;
     margin: 0;
     padding: 0;
@@ -9,13 +9,13 @@ body {
 header {
     text-align: center;
     padding: 20px;
-    background-color: #f8e5ed;
-    color: #a64d79;
+    background-color: #f7e9eb;
+    color: #b35c82;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2em;
+    font-size: 2.2em;
 }
 
 header p {
@@ -26,52 +26,52 @@ header p {
 .menu-categorias {
     display: flex;
     justify-content: center;
-    background-color: #ffe6f0;
-    padding: 10px;
+    background-color: #ffeef5;
+    padding: 12px;
 }
 
 .menu-categorias .categoria {
-    background-color: #f8e5ed;
+    background-color: #f7e9eb;
     border: none;
-    padding: 10px 20px;
-    margin: 0 5px;
+    padding: 10px 25px;
+    margin: 0 6px;
     border-radius: 20px;
-    color: #a64d79;
+    color: #b35c82;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 .menu-categorias .categoria.ativo {
-    background-color: #a64d79;
+    background-color: #b35c82;
     color: #fff;
 }
 
 .menu-categorias .categoria:hover {
-    background-color: #d17a9c;
+    background-color: #d586a3;
     transform: scale(1.05);
 }
 
 .busca {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin: 25px 0;
 }
 
 .busca input {
     width: 60%;
-    padding: 10px;
-    border: 2px solid #f8e5ed;
-    border-radius: 10px;
+    padding: 12px;
+    border: 2px solid #f7e9eb;
+    border-radius: 12px;
     margin-right: 10px;
 }
 
 .busca button {
-    background-color: #a64d79;
+    background-color: #b35c82;
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
+    padding: 12px 25px;
+    border-radius: 12px;
     font-weight: bold;
     cursor: pointer;
     margin-left: 5px;
@@ -79,35 +79,40 @@ header p {
 }
 
 .busca button:hover {
-    background-color: #d17a9c;
+    background-color: #d586a3;
     transform: scale(1.05);
 }
 
 .produtos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .produto {
     background-color: #fff;
-    border: 2px solid #f8e5ed;
-    border-radius: 10px;
+    border: 2px solid #f7e9eb;
+    border-radius: 5px;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     transition: transform 0.3s, box-shadow 0.3s;
+    width: calc(33.333% - 16px);
+    box-sizing: border-box;
+    border: 1px solid #ccc;
 }
 
 .produto:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
 }
 
 .produto img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 12px;
     transition: transform 0.3s;
 }
 
@@ -116,40 +121,40 @@ header p {
 }
 
 .produto h2 {
-    font-size: 1.2em;
-    margin: 10px 0;
-    color: #a64d79;
+    font-size: 1.3em;
+    margin: 12px 0;
+    color: #b35c82;
 }
 
 .produto p {
-    font-size: 1em;
-    margin: 5px 0;
+    font-size: 1.1em;
+    margin: 8px 0;
 }
 
 .produto .ver-mais {
-    background-color: #a64d79;
+    background-color: #b35c82;
     color: #fff;
     border: none;
-    padding: 10px 15px;
-    border-radius: 10px;
+    padding: 12px 18px;
+    border-radius: 12px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 12px;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 .produto .ver-mais:hover {
-    background-color: #d17a9c;
+    background-color: #d586a3;
     transform: scale(1.05);
 }
 
 #valor {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: greenyellow;
+    color: #4caf50;
 }
 
 #detalhes-produto {
-    padding: 20px;
+    padding: 25px;
     background-color: #fff;
     color: #333;
 }
@@ -157,49 +162,49 @@ header p {
 .detalhes-conteudo {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
 .detalhes-imagem {
-    max-width: 400px; /* Limita o tamanho da imagem */
+    max-width: 400px;
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 .detalhes-texto {
-    max-width: 500px;
+    max-width: 550px;
 }
 
 .detalhes-texto h2 {
-    font-size: 1.5em;
-    color: #a64d79;
+    font-size: 1.6em;
+    color: #b35c82;
 }
 
 .detalhes-texto p {
-    font-size: 1.2em;
-    margin: 10px 0;
+    font-size: 1.3em;
+    margin: 12px 0;
 }
 
 .preco {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: greenyellow;
+    color: #4caf50;
 }
 
 #comprar {
-    font-size: 10px;
-    background-color: #a64d79;
+    font-size: 1em;
+    background-color: #b35c82;
     color: #fff;
     border: none;
-    padding: 10px 30px;
-    border-radius: 10px;
+    padding: 12px 35px;
+    border-radius: 12px;
     font-weight: bold;
     cursor: pointer;
-    margin-left: 5px;
+    margin-left: 6px;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 #comprar:hover {
-    background-color: #d17a9c;
+    background-color: #d586a3;
     transform: scale(1.05);
 }
