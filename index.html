@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yara Joias</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <script>
         function filtrarProdutos(categoria) {
             const produtos = document.querySelectorAll('.produto');
@@ -33,13 +34,7 @@
 
         function voltar() {
             document.getElementById('detalhes-produto').style.display = 'none';
-            document.getElementById('produtos').style.display = 'block';
-            
-            // Restaura o tamanho da imagem para o estilo original
-            const imagensProdutos = document.querySelectorAll('.produto img');
-            imagensProdutos.forEach(imagem => {
-                imagem.style.transform = 'scale(1)'; // Remove qualquer aumento aplicado na visualização
-            });
+            document.getElementById('produtos').style.display = 'flex';
         }
     </script>
 </head>
@@ -55,86 +50,68 @@
         <button id="brincos" class="categoria" onclick="filtrarProdutos('brincos')">Brincos</button>
         <button id="colares" class="categoria" onclick="filtrarProdutos('colares')">Colares</button>
         <button id="pulseiras" class="categoria" onclick="filtrarProdutos('pulseiras')">Pulseiras</button>
+        <li id="social">
+            <a href="https://wa.me/559491103771"></a>
+            <img src="icons/whatsapp.png" alt="">
+        </li>
     </nav>
 
-    <section class="busca">
-        <input type="text" placeholder="Buscar produtos...">
-        <button class="favoritos">Ver favoritos</button>
-        <button class="whatsapp">WhatsApp</button>
-    </section>
-
     <main id="produtos" class="produtos">
-        <!-- Seção Colares -->
-        <div class="secao" id="secao-colares">
-            <h2>Colares</h2>
-            <div class="produto colares">
-                <img src="imagens_produtos/Colares/exemplo1.jpeg" alt="Colar 1">
-                <h2>Colar Elegante</h2>
-                <p id="valor">R$ 151,00</p>
-                <button class="ver-mais" onclick="mostrarDetalhes('Colar Elegante', 'imagens_produtos/Colares/exemplo1.jpeg', 'R$ 151,00', 'Colar em prata com design sofisticado ideal para eventos especiais.')">Ver mais</button>
-            </div>
-            <div class="produto colares">
-                <img src="colar2.jpg" alt="Colar 2">
-                <h2>Colar Delicado</h2>
-                <p id="valor">R$ 170,00</p>
-                <button class="ver-mais" onclick="mostrarDetalhes('Colar Delicado', 'colar2.jpg', 'R$ 170,00', 'Colar em prata com um pingente delicado que combina com todos os estilos.')">Ver mais</button>
-            </div>
+        <div class="produto colares">
+            <img src="imagens_produtos/Colares/colar1.jpeg" alt="Colar 1">
+            <h2>Colar Elegante</h2>
+            <p id="valor">R$ 151,00</p>
+            <button class="ver-mais" onclick="mostrarDetalhes('Colar Elegante', 'imagens_produtos/Colares/colar1.jpeg', 'R$ 151,00', 'Colar em prata com design sofisticado ideal para eventos especiais.')">Ver mais</button>
+        </div>
+        <div class="produto colares">
+            <img src="imagens_produtos/Colares/colar2.jpeg" alt="Colar 2">
+            <h2>Colar Delicado</h2>
+            <p id="valor">R$ 170,00</p>
+            <button class="ver-mais" onclick="mostrarDetalhes('Colar Delicado', 'imagens_produtos/Colares/colar2.jpeg', 'R$ 170,00', 'Colar em prata com um pingente delicado que combina com todos os estilos.')">Ver mais</button>
         </div>
 
-        <!-- Seção Anéis -->
-        <div class="secao" id="secao-aneis">
-            <h2>Anéis</h2>
-            <div class="produto aneis">
-                <img src="imagens_produtos/Anéis/anel1.jpeg" alt="Anel 1">
-                <h2>Anel Clássico</h2>
-                <p id="valor">R$ 162,00</p>
-                <button class="ver-mais" onclick="mostrarDetalhes('Anel Clássico', 'anel1.jpg', 'R$ 162,00', 'Anel em prata com design clássico e elegante para todas as ocasiões.')">Ver mais</button>
-            </div>
-            <div class="produto aneis">
-                <img src="anel2.jpg" alt="Anel 2">
-                <h2>Anel Moderno</h2>
-                <p id="valor">R$ 190,00</p>
-                <button class="ver-mais" onclick="mostrarDetalhes('Anel Moderno', 'anel2.jpg', 'R$ 190,00', 'Anel moderno em prata com detalhes minimalistas e sofisticados.')">Ver mais</button>
-            </div>
+        <div class="produto aneis">
+            <img src="imagens_produtos/Anéis/anel1.jpeg" alt="Anel 1">
+            <h2>Anel Clássico</h2>
+            <p id="valor">R$ 162,00</p>
+            <button class="ver-mais" onclick="mostrarDetalhes('Anel Clássico', 'imagens_produtos/Anéis/anel1.jpeg', 'R$ 162,00', 'Anel em prata com design clássico e elegante para todas as ocasiões.')">Ver mais</button>
+        </div>
+        <div class="produto aneis">
+            <img src="imagens_produtos/Anéis/anel2.jpeg" alt="Anel 2">
+            <h2>Anel Moderno</h2>
+            <p id="valor">R$ 190,00</p>
+            <button class="ver-mais" onclick="mostrarDetalhes('Anel Moderno', 'imagens_produtos/Anéis/anel2.jpeg', 'R$ 190,00', 'Anel moderno em prata com detalhes minimalistas e sofisticados.')">Ver mais</button>
         </div>
 
-        <!-- Seção Brincos -->
-        <div class="secao" id="secao-brincos">
-            <h2>Brincos</h2>
-            <div class="produto brincos">
-                <img src="imagens_produtos/Brincos/brinco1.jpeg" alt="Brinco 1">
-                <h2>Brinco Pequeno</h2>
-                <p id="valor">R$ 149,00</p>
-                <button class="ver-mais" onclick="mostrarDetalhes('Brinco Pequeno', 'brinco1.jpg', 'R$ 149,00', 'Brinco pequeno em prata, perfeito para o dia a dia.')">Ver mais</button>
-            </div>
-            <div class="produto brincos">
-                <img src="brinco2.jpg" alt="Brinco 2">
-                <h2>Brinco Elegante</h2>
-                <p id="valor">R$ 180,00</p>
-                <button class="ver-mais" onclick="mostrarDetalhes('Brinco Elegante', 'brinco2.jpg', 'R$ 180,00', 'Brinco elegante em prata, ideal para ocasiões especiais.')">Ver mais</button>
-            </div>
+        <div class="produto brincos">
+            <img src="imagens_produtos/Brincos/brinco1.jpeg" alt="Brinco 1">
+            <h2>Brinco Elegante</h2>
+            <p id="valor">R$ 149,00</p>
+            <button class="ver-mais" onclick="mostrarDetalhes('Brinco Elegante', 'imagens_produtos/Brincos/brinco1.jpeg', 'R$ 149,00', 'Brinco pequeno em prata, perfeito para o dia a dia.')">Ver mais</button>
+        </div>
+        <div class="produto brincos">
+            <img src="imagens_produtos/Brincos/brinco2.jpeg" alt="Brinco 2">
+            <h2>Brinco Pequeno</h2>
+            <p id="valor">R$ 180,00</p>
+            <button class="ver-mais" onclick="mostrarDetalhes('Brinco Pequeno', 'imagens_produtos/Brincos/brinco2.jpeg', 'R$ 180,00', 'Brinco elegante em prata, ideal para ocasiões especiais.')">Ver mais</button>
         </div>
 
-        <!-- Seção Pulseiras -->
-        <div class="secao" id="secao-pulseiras">
-            <h2>Pulseiras</h2>
-            <div class="produto pulseiras">
-                <img src="imagens_produtos/Pulseiras/pulseira1.jpeg" alt="Pulseira 1">
-                <h2>Pulseira Clássica</h2>
-                <p id="valor">R$ 150,00</p>
-                <button class="ver-mais" onclick="mostrarDetalhes('Pulseira Clássica', 'pulseira1.jpg', 'R$ 150,00', 'Pulseira em prata com design clássico e atemporal.')">Ver mais</button>
-            </div>
-            <div class="produto pulseiras">
-                <img src="pulseira2.jpg" alt="Pulseira 2">
-                <h2>Pulseira Moderna</h2>
-                <p id="valor">R$ 200,00</p>
-                <button class="ver-mais" onclick="mostrarDetalhes('Pulseira Moderna', 'pulseira2.jpg', 'R$ 200,00', 'Pulseira moderna com detalhes únicos e acabamento impecável.')">Ver mais</button>
-            </div>
+        <div class="produto pulseiras">
+            <img src="imagens_produtos/Pulseiras/pulseira1.jpeg"Pulseira 1">
+            <h2>Pulseira Clássica</h2>
+            <p id="valor">R$ 150,00</p>
+            <button class="ver-mais" onclick="mostrarDetalhes('Pulseira Clássica', 'imagens_produtos/Pulseiras/pulseira1.jpeg', 'R$ 150,00', 'Pulseira em prata com design clássico e atemporal.')">Ver mais</button>
+        </div>
+        <div class="produto pulseiras">
+            <img src="imagens_produtos/Pulseiras/pulseira2.jpeg" alt="Pulseira 2">
+            <h2>Pulseira Moderna</h2>
+            <p id="valor">R$ 200,00</p>
+            <button class="ver-mais" onclick="mostrarDetalhes('Pulseira Moderna', 'imagens_produtos/Pulseiras/pulseira2.jpeg', 'R$ 200,00', 'Pulseira moderna com detalhes únicos e acabamento impecável.')">Ver mais</button>
         </div>
     </main>
 
     <section id="detalhes-produto" style="display: none;">
-        <button onclick="voltar()">Voltar</button>
+        <button id="botao-voltar", onclick="voltar()">Voltar</button>
         <div class="detalhes-conteudo">
             <img src="" alt="Imagem do produto" class="detalhes-imagem">
             <div class="detalhes-texto">
