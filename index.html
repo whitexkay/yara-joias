@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yara Joias</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script>
+        function filtrarProdutos(categoria) {
+            const produtos = document.querySelectorAll('.produto');
+            produtos.forEach(produto => {
+                if (categoria === 'todos' || produto.classList.contains(categoria)) {
+                    produto.style.display = 'block';
+                } else {
+                    produto.style.display = 'none';
+                }
+            });
+
+            const botoes = document.querySelectorAll('.menu-categorias .categoria');
+            botoes.forEach(botao => botao.classList.remove('ativo'));
+            document.getElementById(categoria).classList.add('ativo');
+        }
+
+        function mostrarDetalhes(nome, imagem, preco, descricao) {
+            const detalhes = document.getElementById('detalhes-produto');
+            detalhes.querySelector('h2').innerText = nome;
+            detalhes.querySelector('img').src = imagem;
+            detalhes.querySelector('p.preco').innerText = preco;
+            detalhes.querySelector('p.descricao').innerText = descricao;
+            detalhes.style.display = 'block';
+            document.getElementById('produtos').style.display = 'none';
+        }
+
+        function voltar() {
+            document.getElementById('detalhes-produto').style.display = 'none';
+            document.getElementById('produtos').style.display = 'flex';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Yara joias</h1>
+    </header>
+
+    <nav class="menu-categorias">
+        <div class="categorias">
+            <button id="todos" class="categoria ativo" onclick="filtrarProdutos('todos')">Todos</button>
+            <button id="aneis" class="categoria" onclick="filtrarProdutos('aneis')">Anéis</button>
+            <button id="brincos" class="categoria" onclick="filtrarProdutos('brincos')">Brincos</button>
+            <button id="colares" class="categoria" onclick="filtrarProdutos('colares')">Colares</button>
+            <button id="pulseiras" class="categoria" onclick="filtrarProdutos('pulseiras')">Pulseiras</button>
+        </div>
+        <div class="icons">
+            <a href="https://wa.me/559491103771" target="_blank">
+                <img class="whatsapp-icon" src="icons/whatsapp.png" alt="WhatsApp Icon">
+            </a>
+        </div>
+    </nav>
+
+    <main id="produtos" class="produtos">
+        <div class="produto colares">
+            <img src="imagens_produtos/Colares/colar1.jpeg" alt="Colar 1">
+            <h2>Colar Elegante</h2>
+            <p id="valor">R$ 151,00</p>
+            <button class="ver-mais" onclick="mostrarDetalhes('Colar Elegante', 'imagens_produtos/Colares/colar1.jpeg', 'R$ 151,00', 'Colar em prata com design sofisticado ideal para eventos especiais.')">Ver mais</button>
+        </div>
+        <div class="produto colares">
+            <img src="imagens_produtos/Colares/colar2.jpeg" alt="Colar 2">
+            <h2>Colar Delicado</h2>
+            <p id="valor">R$ 170,00</p>
+            <button class="ver-mais" onclick="mostrarDetalhes('Colar Delicado', 'imagens_produtos/Colares/colar2.jpeg', 'R$ 170,00', 'Colar em prata com um pingente delicado que combina com todos os estilos.')">Ver mais</button>
+        </div>
+
+        <div class="produto aneis">
+            <img src="imagens_produtos/Anéis/anel1.jpeg" alt="Anel 1">
+            <h2>Anel Clássico</h2>
+            <p id="valor">R$ 162,00</p>
+            <button class="ver-mais" onclick="mostrarDetalhes('Anel Clássico', 'imagens_produtos/Anéis/anel1.jpeg', 'R$ 162,00', 'Anel em prata com design clássico e elegante para todas as ocasiões.')">Ver mais</button>
+        </div>
+        <div class="produto aneis">
+            <img src="imagens_produtos/Anéis/anel2.jpeg" alt="Anel 2">
+            <h2>Anel Moderno</h2>
+            <p id="valor">R$ 190,00</p>
+            <button class="ver-mais" onclick="mostrarDetalhes('Anel Moderno', 'imagens_produtos/Anéis/anel2.jpeg', 'R$ 190,00', 'Anel moderno em prata com detalhes minimalistas e sofisticados.')">Ver mais</button>
+        </div>
+
+        <div class="produto brincos">
+            <img src="imagens_produtos/Brincos/brinco1.jpeg" alt="Brinco 1">
+            <h2>Brinco Elegante</h2>
+            <p id="valor">R$ 149,00</p>
+            <button class="ver-mais" onclick="mostrarDetalhes('Brinco Elegante', 'imagens_produtos/Brincos/brinco1.jpeg', 'R$ 149,00', 'Brinco pequeno em prata, perfeito para o dia a dia.')">Ver mais</button>
+        </div>
+        <div class="produto brincos">
+            <img src="imagens_produtos/Brincos/brinco2.jpeg" alt="Brinco 2">
+            <h2>Brinco Pequeno</h2>
+            <p id="valor">R$ 180,00</p>
+            <button class="ver-mais" onclick="mostrarDetalhes('Brinco Pequeno', 'imagens_produtos/Brincos/brinco2.jpeg', 'R$ 180,00', 'Brinco elegante em prata, ideal para ocasiões especiais.')">Ver mais</button>
+        </div>
+
+        <div class="produto pulseiras">
+            <img src="imagens_produtos/Pulseiras/pulseira1.jpeg"Pulseira 1">
+            <h2>Pulseira Clássica</h2>
+            <p id="valor">R$ 150,00</p>
+            <button class="ver-mais" onclick="mostrarDetalhes('Pulseira Clássica', 'imagens_produtos/Pulseiras/pulseira1.jpeg', 'R$ 150,00', 'Pulseira em prata com design clássico e atemporal.')">Ver mais</button>
+        </div>
+        <div class="produto pulseiras">
+            <img src="imagens_produtos/Pulseiras/pulseira2.jpeg" alt="Pulseira 2">
+            <h2>Pulseira Moderna</h2>
+            <p id="valor">R$ 200,00</p>
+            <button class="ver-mais" onclick="mostrarDetalhes('Pulseira Moderna', 'imagens_produtos/Pulseiras/pulseira2.jpeg', 'R$ 200,00', 'Pulseira moderna com detalhes únicos e acabamento impecável.')">Ver mais</button>
+        </div>
+    </main>
+
+    <section id="detalhes-produto" style="display: none;">
+        <button id="botao-voltar", onclick="voltar()">Voltar</button>
+        <div class="detalhes-conteudo">
+            <img src="" alt="Imagem do produto" class="detalhes-imagem">
+            <div class="detalhes-texto">
+                <h2></h2>
+                <p class="preco"></p>
+                <p class="descricao"></p>
+                <div class="icons-vermais">
+                    <a href="https://wa.me/559491103771" target="_blank">
+                        <img class="whatsapp-icon" src="icons/whatsapp.png" alt="WhatsApp Icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-conteudo">
+            <div class="footer-sobre">
+                <h3>Sobre Nós</h3>
+                <p>Yara Joias oferece as melhores peças para destacar sua beleza com elegância e sofisticação. Joias feitas com carinho para você brilhar!</p>
+            </div>
+            <div class="footer-redes">
+                <h3>Siga-nos</h3>
+                <a href="https://instagram.com/josias.r.r.s?igshid=MzNlNGNkZWQ4Mg==" target="_blank">
+                    <img src="icons/instagram_2111463.png" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://instagram.com/josias.r.r.s?igshid=MzNlNGNkZWQ4Mg==" target="_blank">
+                    <img src="icons/facebook_2504903.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://wa.me/559491103771" target="_blank">
+                    <img src="icons/whatsapp.png" alt="WhatsApp" class="social-icon">
+                </a>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2025 Yara Joias. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
