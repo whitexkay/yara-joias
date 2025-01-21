@@ -34,6 +34,8 @@ header {
     left: 0;
     width: 100%;
     z-index: 10;
+    padding-top: 20px;
+   
 }
 
 header h1 {
@@ -52,6 +54,8 @@ header h1 {
     width: 100%;
     position: fixed;
     z-index: 9;
+    padding-top: 20px;
+    overflow: visible;
 }
 
 .categorias {
@@ -336,12 +340,15 @@ footer {
 @media (max-width: 768px) {
     .produtos {
         grid-template-columns: repeat(2, 1fr);
-        margin-top: 140px;
+        margin-top: 170px;
     }
 
     .produto {
         width: calc(50% - 10px);
         margin-bottom: 16px;
+    }
+    header{
+        padding-top: 20px;
     }
 
     .categorias {
@@ -366,7 +373,8 @@ footer {
         width: 100%;
         position:fixed;
         z-index: 9;
-        padding-left: 22px;;
+        padding-left: 22px;
+        padding-top: 35px;
     }
 
     .categoria {
@@ -381,17 +389,40 @@ footer {
         order: -1;
     }
 
-    .categorias::-webkit-scrollbar {
-        height: 4px;
+    body {
+        scrollbar-width: thin;
+        scrollbar-color: #d9a5c9 #f2e8f5;
     }
-
-    .categorias::-webkit-scrollbar-thumb {
-        background-color: #e298c6;
-        border-radius: 10px;
+    
+    body::-webkit-scrollbar {
+        width: 8px;
     }
-
-    .categorias::-webkit-scrollbar-track {
-        background-color: #dab9cd;
+    
+    body::-webkit-scrollbar-thumb {
+        background-color: #d9a5c9;
+        border-radius: 4px;
+    }
+    
+    body::-webkit-scrollbar-track {
+        background: #f2e8f5;
+        border-radius: 4px;
+    }
+    
+    .produtos::-webkit-scrollbar,
+    .detalhes::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    .produtos::-webkit-scrollbar-thumb,
+    .detalhes::-webkit-scrollbar-thumb {
+        background-color: #d9a5c9;
+        border-radius: 4px;
+    }
+    
+    .produtos::-webkit-scrollbar-track,
+    .detalhes::-webkit-scrollbar-track {
+        background: #f2e8f5;
+        border-radius: 4px;
     }
 }
 
