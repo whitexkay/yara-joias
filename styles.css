@@ -73,13 +73,13 @@ header h1 {
 }
 
 .icons {
-    position: fixed; /* Mantém o botão fixo na tela */
-    bottom: 20px; /* Distância do rodapé */
-    right: 20px; /* Distância da lateral direita */
-    z-index: 1000; /* Garante que fique acima de outros elementos */
-    width: 60px; /* Ajuste conforme necessário */
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 1000; 
+    width: 60px; 
     height: 60px;
-    border-radius: 50%; /* Botão redondo */
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
