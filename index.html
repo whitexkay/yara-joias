@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <script>
         function filtrarProdutos(categoria) {
+            
+            document.getElementById('produtos').style.display = 'flex';
+            document.getElementById('detalhes-produto').style.display = 'none';
+
             const produtos = document.querySelectorAll('.produto');
             produtos.forEach(produto => {
                 if (categoria === 'todos' || produto.classList.contains(categoria)) {
@@ -20,6 +24,8 @@
             const botoes = document.querySelectorAll('.menu-categorias .categoria');
             botoes.forEach(botao => botao.classList.remove('ativo'));
             document.getElementById(categoria).classList.add('ativo');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function mostrarDetalhes(nome, imagem, preco, descricao) {
@@ -36,6 +42,18 @@
             document.getElementById('detalhes-produto').style.display = 'none';
             document.getElementById('produtos').style.display = 'flex';
         }
+        document.addEventListener('DOMContentLoaded', function () {
+            const verMaisBtns = document.querySelectorAll('.ver-mais');
+            verMaisBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+        
     </script>
 </head>
 <body>
@@ -99,7 +117,7 @@
         </div>
 
         <div class="produto pulseiras">
-            <img src="imagens_produtos/Pulseiras/pulseira1.jpeg"Pulseira 1">
+            <img src="imagens_produtos/Pulseiras/pulseira1.jpeg" alt="Pulseira 1">
             <h2>Pulseira Clássica</h2>
             <p id="valor">R$ 150,00</p>
             <button class="ver-mais" onclick="mostrarDetalhes('Pulseira Clássica', 'imagens_produtos/Pulseiras/pulseira1.jpeg', 'R$ 150,00', 'Pulseira em prata com design clássico e atemporal.')">Ver mais</button>
@@ -112,7 +130,7 @@
         </div>
     </main>
 
-    <section id="detalhes-produto" style="display: none;">
+    <section id="detalhes-produto" class="detalhes" style="display: none;">
         <button id="botao-voltar", onclick="voltar()">Voltar</button>
         <div class="detalhes-conteudo">
             <img src="" alt="Imagem do produto" class="detalhes-imagem">
@@ -136,7 +154,7 @@
             </div>
             <div class="footer-redes">
                 <h3>Siga-nos</h3>
-                <a href="https://instagram.com/josias.r.r.s?igshid=MzNlNGNkZWQ4Mg==" target="_blank">
+                <a href="https://www.instagram.com/yaraareiss?igsh=MXNxM3Zjdnh1aHJvYg==" target="_blank">
                     <img src="icons/instagram_2111463.png" alt="Instagram" class="social-icon">
                 </a>
                 <a href="https://instagram.com/josias.r.r.s?igshid=MzNlNGNkZWQ4Mg==" target="_blank">
